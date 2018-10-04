@@ -2,9 +2,23 @@ h1{
     font-family: 'Limelight', cursive;
     text-decoration: whitesmoke;
     text-align: center;
-    
+    font-size: 45px;
+}
+h2 {
+    text-align: center;
 }
 body{
     background-image: url("/Users/kaylaverheyen/Desktop/hw_5/TriviaGame/assets/images/blade-runner-2049-dual-monitors-dual-display-Blade-Runner-movies-1193417-wallhere.com.jpg");
     align-content: center;
+}
+#questions{
+    
+    color: cornsilk;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    line-height: 3.5;
+}
+.options{
+    text-align: center;
+    color: cornsilk;
 }

@@ -109,28 +109,6 @@ function displayQuestions() {
 
 
 
-
-// var showQuestions = questions[questionIndex];
-// var parentDiv = $("<div>");
-// var pQuestionText = $("<p>");
-// pQuestionText.text(showQuestions.text);
-
-// parentDiv.append(pQuestionText);
-
-
-// for (var i = 0; i < showQuestions.options.length; i++) {
-
-//     $(".questions").html(parseInt(questionIndex) + 1 + ". " + showQuestions[questionIndex].questions);
-//     var choices = questions[questionIndex].options;
-//     var formHtml = '';
-//     for (var i = 0; i < choices.length; i++) {
-//         formHtml += '<div><input type="radio" name="option" value="' + i + '" id="option' + i + '"><label for="option' + i + '">' +
-//             questions[questionIndex].choices[i] + '</label></div><br/>';
-//     }
-//     $('#form').html(formHtml);
-//     $("#option0").prop('checked', true);
-// };
-
 // function checkAns() {
 //     if ($("input[name=option]:checked").val() == questions[questionIndex].correctAnswer) {
 //         correctAnswers++;
