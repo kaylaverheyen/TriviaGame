@@ -38,6 +38,9 @@ $("#start-btn").on("click", function () {
 
     startGame();
 });
+var submitButton = document.getElementById("submit");
+var quizContainer = document.getElementById("questions");
+var results = document.getElementById("results");
 
 //start the game function:
 function startGame() {
@@ -81,7 +84,7 @@ function endGame() {
     $(".start-btn").show();
 
 }
-var quizContainer = document.getElementById("questions");
+
 
 function displayQuestions() {
 
@@ -116,9 +119,47 @@ function displayQuestions() {
 // };
 
 
+function showResults() {
+    // on submit, show results
+    submitButton.addEventListener("click", showResults);
+    //$(".results").show();
+    $(".questions").hide();
 
-//$(".questions").append(parentDiv);
+    // gather answer containers from our quiz
+    var answerContainers = quizContainer.querySelectorAll(".answers");
+
+    // keep track of user's answers
+    var numberCorrect = 0;
+
+    // for each question...
+    questions.forEach((currentQ, questionNum) => {
+
+        // find selected answer
+        const answerContainer = answerContainers[questionNum];
+        const selector = `input[name=question${questionNum}]:checked`;
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+        // if answer is correct
+        if (userAnswer === currentQ.answer) {
+            // add to the number of correct answers
+            numberCorrect++;
+
+        }
+        // if answer is wrong or blank
+        else {
+            numberIncorrect++;
+        }
+    });
+
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = numberCorrect + " out of " + questions.length;
+}
 
 
-// on submit, show results
-submitButton.addEventListener('click', showResults);
+
+
+
+
+
+
+
