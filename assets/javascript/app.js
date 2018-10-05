@@ -121,7 +121,7 @@ function displayQuestions() {
 
 function showResults() {
     // on submit, show results
-    submitButton.addEventListener("click", showResults);
+    submitButton.on("click", showResults);
     //$(".results").show();
     $(".questions").hide();
 
