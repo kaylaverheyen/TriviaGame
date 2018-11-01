@@ -32,6 +32,7 @@ var questionIndex = 0;
 var totalGameTime = 90;
 var numberCorrect = 0;
 var numberIncorrect = 0;
+var QN = 0;
 
 $("#start-btn").on("click", function () {
     $(this).hide();
@@ -69,21 +70,21 @@ function startTimer() {
     }, 1000);
 }
 
-function endGame() {
-    clearInterval(timer);
-    $(".questions").hide();
-    //message
+// function endGame() {
+//     //clearInterval(timer);
+//     $(".questions").hide();
+//     //message
 
-    //view results on webpage
-    $(".results").show();
+//     //view results on webpage
+//     $(".results").show();
 
-    numberCorrect = 0;
-    numberIncorrect = 0;
-    totalGameTime = 90;
-    questionIndex = 0;
-    $(".start-btn").show();
+//     numberCorrect = 0;
+//     numberIncorrect = 0;
+//     totalGameTime = 90;
+//     questionIndex = 0;
+//     $(".start-btn").show();
 
-}
+// }
 
 
 function displayQuestions() {
@@ -119,11 +120,15 @@ function displayQuestions() {
 // };
 
 
-function showResults() {
-    // on submit, show results
-    submitButton.on("click", showResults);
+//function showResults() {
+// on submit, show results
+//submitButton.on("click", showResults);
+
+$("#submit").on("click", function () {
     //$(".results").show();
+    clearInterval(timer);
     $(".questions").hide();
+    totalGameTime = 90;
 
     // gather answer containers from our quiz
     var answerContainers = quizContainer.querySelectorAll(".answers");
@@ -136,8 +141,13 @@ function showResults() {
 
         // find selected answer
         const answerContainer = answerContainers[questionNum];
-        const selector = `input[name=question${questionNum}]:checked`;
+        console.log("QN: " + questionNum);
+        console.log("AC: " + answerContainer);
+        const selector = $("input[name='text'+${questionNum}]:checked").val();
+        //const selector = `input[name=question${questionNum}]:checked`;
+        console.log("Selector: " + selector);
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+        console.log("UA: " + userAnswer);
 
         // if answer is correct
         if (userAnswer === currentQ.answer) {
@@ -153,7 +163,8 @@ function showResults() {
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = numberCorrect + " out of " + questions.length;
-}
+    //}
+});
 
 
 
