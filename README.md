@@ -3,7 +3,8 @@
 **Devleoper:** Kayla Verheyen 
 **Date:** 10-2-18
 **For:** Northwestern Coding Bootcamp
-**Published:** 
+**Published:** https://kaylaverheyen.github.io/TriviaGame/
+
 **Built Using:** Javascipt, HTML, CSS, JQuery
 
 ## Sumary ##
